@@ -1,5 +1,5 @@
 {
-  "name": "g-rpcweb",
+  "name": "grpc-web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "generate-proto": "protoc --plugin=.cmd=./node_modules/.bin/protoc-gen-ts --js_out=import_style=commonjs,binary:./src/protos --ts_out=./src/protos -I ./src/protos ./src/protos/*.proto",
-    "lint": "ng lint"
+    "generate-proto": "cd src/protos && protoc --plugin=protoc-gen-ts=../../node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:../../generated --ts_out=service=grpc-web:../../generated hello.proto"
   },
   "private": true,
   "dependencies": {
@@ -20,26 +19,19 @@
     "@angular/platform-browser": "^17.2.0",
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
-    "grpc-web": "^1.5.0",
+    "@improbable-eng/grpc-web": "^0.15.0",
+    "google-protobuf": "^3.21.4",
     "rxjs": "~7.8.0",
+    "ts-protoc-gen": "^0.15.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.2.0",
-    "@angular-eslint/builder": "17.5.2",
-    "@angular-eslint/eslint-plugin": "17.5.2",
-    "@angular-eslint/eslint-plugin-template": "17.5.2",
-    "@angular-eslint/schematics": "17.5.2",
-    "@angular-eslint/template-parser": "17.5.2",
     "@angular/cli": "^17.2.0",
     "@angular/compiler-cli": "^17.2.0",
+    "@types/google-protobuf": "^3.15.12",
     "@types/jasmine": "~5.1.0",
-    "@typescript-eslint/eslint-plugin": "7.11.0",
-    "@typescript-eslint/parser": "7.11.0",
-    "eslint": "^8.57.0",
-    "grpc_tools_node_protoc_ts": "^5.3.3",
-    "grpc-tools": "^1.12.4",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

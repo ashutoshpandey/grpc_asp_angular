@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gRPCWeb": {
+    "grpcWeb": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/g-rpcweb",
+            "outputPath": "dist/grpc-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,9 +27,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/grpc-web/generate.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -59,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "gRPCWeb:build:production"
+              "buildTarget": "grpcWeb:build:production"
             },
             "development": {
-              "buildTarget": "gRPCWeb:build:development"
+              "buildTarget": "grpcWeb:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "gRPCWeb:build"
+            "buildTarget": "grpcWeb:build"
           }
         },
         "test": {
@@ -90,22 +88,8 @@
             ],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
-          }
         }
       }
     }
-  },
-  "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
   }
 }

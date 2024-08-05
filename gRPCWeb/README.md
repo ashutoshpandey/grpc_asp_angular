@@ -1,20 +1,6 @@
-# Download and install protocol buffer compiler
+# Generating stub
 
-https://github.com/protocolbuffers/protobuf/releases
+Before writing code, first generate the stub with this command:
 
-Download `protoc-27.3-win64.zip` or whatever version is available
+`protoc --plugin=protoc-gen-ts="<project_path>\node_modules\.bin\protoc-gen-ts.cmd" --js_out=import_style=commonjs,binary:./generated --ts_out=service=grpc-web:"./generated" hello.proto`
 
-Extract and add the `bin` directory to PATH
-
-# Install protoc-gen-js
-
- npm install -g protoc-gen-js
-
-# Generate stub
-
-npm run generate-proto
-
-
-# NOTE
-
-Make sure you run above command first before writing service file

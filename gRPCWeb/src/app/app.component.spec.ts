@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'gRPCWeb' title`, () => {
+  it(`should have the 'grpcWeb' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('gRPCWeb');
+    expect(app.title).toEqual('grpcWeb');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, gRPCWeb');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, grpcWeb');
   });
 });
